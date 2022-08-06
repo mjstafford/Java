@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+div{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top:1rem;
+}
+
+form{
+	display:flex;
+	flex-direction:column;
+	padding:2rem;
+	border:2px solid black;
+}
+
+form>input{
+	margin-bottom:1rem;
+}
+
+form>input[type="submit"]{
+	    width: fit-content;
+    align-self: end;
+}
+
+#fortune{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+#fortune>p{
+	background-color: lightblue;
+	padding:2rem;
+	font-size:2rem;
+	max-width:40rem;
+	border: 2px solid black;
+}
