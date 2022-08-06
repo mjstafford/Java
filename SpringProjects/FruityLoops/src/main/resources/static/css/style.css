@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	color: pink;
+}
+
+body {
+	background-color: darkblue;
+	display:flex;
+}
+
+table {
+	border:10px solid red;
+	border-collapse: collapse;
+	margin: 20px 0;
+	padding:1rem;
+}
+
+td,th {
+	color:white;
+	text-align:left;
+	border-bottom:1px solid white;
+	padding: .5rem 2rem .5rem .2rem;
+}
+th{
+	padding: 1rem 2rem 1rem .2rem;
+	border-bottom:3px solid white;
+}
+
+div {
+	margin: 0px auto;
+}
+
