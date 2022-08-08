@@ -16,35 +16,14 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Books - java</title>
+<title>Show Book</title>
 </head>
 
 <body>
-	<table class="table table-hover">
-	  <thead>
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">Title</th>
-			<th scope="col">Language</th>
-			<th scope="col"># Pages</th>
-		</tr>
-	  </thead>
-		<tbody>
-			<c:forEach var="book" items="${books}">
-				<tr>
-					<th scope="row">	<c:out value="${book.id}"/>	</th>		
-					<td>	
-						<a href="/books/<c:out value="${book.id}"/>" >
-							<c:out value="${book.title}"/>	
-						</a>
-					</td>		
-					<td>	<c:out value="${book.language}"/>	</td>		
-					<td>	<c:out value="${book.numberOfPages}"/>	</td>		
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	
+	<h1>Title: <c:out value="${book.title}" /></h1>
+	<h2>Description: <c:out value="${book.description}" /></h2>
+	<h2>Language: <c:out value="${book.language}" /></h2>
+	<h2>Pages: <c:out value="${book.numberOfPages}" /></h2>
 </body>
 
 </html>

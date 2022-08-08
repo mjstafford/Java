@@ -43,6 +43,13 @@ public class BookService {
     }
 
 	public void deleteBook(Long id) {
-		bookRepo.deleteById(id);
+		//my version
+		//bookRepo.deleteById(id);
+		
+		//better version via solutions
+		Optional<Book> optionalBook = bookRepo.findById(id);
+		if(optionalBook.isPresent()) {
+			bookRepo.deleteById(id);
+		}
 	}
 }
