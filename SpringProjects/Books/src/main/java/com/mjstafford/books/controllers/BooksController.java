@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,19 +41,20 @@ public class BooksController {
 	}
 	
 	@GetMapping("/books/new")
-	public String bookForm() {
+	public String bookForm(@ModelAttribute("book") Book book) {
 		return "new.jsp";
 	}
 	
 	@PostMapping("/books/new")
-	public String process(
-			@RequestParam("title") String title,
-			@RequestParam("description") String description,
-			@RequestParam("language") String language,
-			@RequestParam("numberOfPages") Integer numberOfPages
-			) {
+	public String process(@ModelAttribute("book") Book book) {
+//			@RequestParam("title") String title,
+//			@RequestParam("description") String description,
+//			@RequestParam("language") String language,
+//			@RequestParam("numberOfPages") Integer numberOfPages
+//			) {
 		
-		bookService.createBook(new Book(title, description, language, numberOfPages));
+//		bookService.createBook(new Book(title, description, language, numberOfPages));
+		bookService.createBook(book);
 		
 		return "redirect:/books";
 	}

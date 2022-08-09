@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "form" uri = "http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,21 +22,21 @@
 <body>
 	<div id="form-page-container">
 		<h1>New Book</h1>
-		<form action="/books/new" method="post" id="form-container">
-			<label for="title">Title</label>
-			<input type="text" name="title" id="title" />
+		<form:form action="/books/new" method="post" modelAttribute="book" id="form-container">
+			<form:label path="title">Title</form:label>
+			<form:input type="text" path="title" id="title" />
 
-			<label for="description">Description</label>
-			<textarea name="description" id="description" cols="30" rows="10"></textarea>
+			<form:label path="description">Description</form:label>
+			<form:textarea path="description" id="description" cols="30" rows="10"></form:textarea>
 
-			<label for="language">Language</label>
-			<input type="text" name="language" id="language" />
+			<form:label path="language">Language</form:label>
+			<form:input type="text" path="language" id="language" />
 
-			<label for="numberOfPages">Pages</label>
-			<input type="number" name="numberOfPages" id="numberOfPages" />
+			<form:label path="numberOfPages">Pages</form:label>
+			<form:input type="number" path="numberOfPages" id="numberOfPages" />
 			
 			<input type="submit" value="Submit" />
-		</form>
+		</form:form>
 	</div>
 </body>
 </html>
