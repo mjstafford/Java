@@ -46,5 +46,12 @@
 	    </p>    
 	    <input type="submit" value="Submit"/>
 	</form:form>
+
+	<!--  delete option -->
+	<form:form action="/expense/${expense.id}" method="post">
+	    <input type="hidden" name="_method" value="delete">
+	    <input type="submit" value="Delete" />
+	</form:form>	
+	
 </body>
 </html>

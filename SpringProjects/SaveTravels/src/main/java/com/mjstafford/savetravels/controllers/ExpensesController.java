@@ -22,6 +22,7 @@ import com.mjstafford.savetravels.services.ExpenseService;
 public class ExpensesController {
 	
 	//does your dependency injection for you, otherwise need a constructor to instantiate it
+	//do not need private final when using Autowired
 	@Autowired						
 	ExpenseService expenseService;
 	
@@ -70,6 +71,13 @@ public class ExpensesController {
             expenseService.updateExpense(expense);
             return "redirect:/";
         }
+    }
+    
+    //delete route
+    @RequestMapping(value="/expense/{id}", method=RequestMethod.DELETE)
+    public String destroy(@PathVariable("id") Long id) {
+    	expenseService.deleteExpense(id);
+        return "redirect:/";
     }
 	
 }

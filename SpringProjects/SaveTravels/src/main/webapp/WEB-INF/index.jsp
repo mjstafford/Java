@@ -40,7 +40,7 @@
 						<td>	$<c:out value="${expense.amount}"/>	</td>			
 						<td>
 							<a href="/expense/<c:out value="${expense.id}"/>/edit"> 
-								edit	
+								edit/delete	
 							</a> 
 						</td>			
 					</tr>
