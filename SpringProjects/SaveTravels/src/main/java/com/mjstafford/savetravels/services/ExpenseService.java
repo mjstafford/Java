@@ -23,6 +23,11 @@ public class ExpenseService {
 	public Expense save(Expense expense) {
 		return expenseRepo.save(expense);
 	}
+	
+	//methods that call the repo's
+	public Expense updateExpense(Expense expense) {
+		return expenseRepo.save(expense);
+	}
 
 	public void delete(Long id) {
 		expenseRepo.deleteById(id);
