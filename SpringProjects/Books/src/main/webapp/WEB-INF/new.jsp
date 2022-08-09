@@ -3,6 +3,7 @@
     
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "form" uri = "http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,15 +25,19 @@
 		<h1>New Book</h1>
 		<form:form action="/books/new" method="post" modelAttribute="book" id="form-container">
 			<form:label path="title">Title</form:label>
+			<form:errors path="title" class="text-danger" />
 			<form:input type="text" path="title" id="title" />
 
 			<form:label path="description">Description</form:label>
+			<form:errors path="description" class="text-danger" />
 			<form:textarea path="description" id="description" cols="30" rows="10"></form:textarea>
 
 			<form:label path="language">Language</form:label>
+			<form:errors path="language" class="text-danger" />
 			<form:input type="text" path="language" id="language" />
 
 			<form:label path="numberOfPages">Pages</form:label>
+			<form:errors path="numberOfPages" class="text-danger" />
 			<form:input type="number" path="numberOfPages" id="numberOfPages" />
 			
 			<input type="submit" value="Submit" />
