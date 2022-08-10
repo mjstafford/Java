@@ -18,52 +18,21 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Languages</title>
+<title>Edit Page</title>
 </head>
 <body>
 	<div class="page-container">
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Creator</th>
-					<th scope="col">Version</th>
-					<th scope="col">Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="language" items="${languages}">
-					<tr>
-						<td scope="row">
-							<a href="/languages/${language.id}">
-								<c:out value="${language.name}"/>							
-							</a>
-						</td>		
-						<td>	
-							<c:out value="${language.creator}"/>	
-						</td>		
-						<td>
-							<c:out value="${language.version}"/>	
-						</td>			
-						<td>
-							<div id="actions">
-								<!--  delete option -->
-								<form:form action="/languages/${language.id}" method="post" >
-								    <input type="hidden" name="_method" value="delete">
-								    <input type="submit" value="Delete" class="btn btn-link"/>
-								</form:form>	
-							
-								<a href="/languages/edit/<c:out value="${language.id}"/>"> 
-									edit
-								</a>
-							</div>
-						</td>		
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<div id="actions">
+			<form:form action="/languages/${language.id}" method="post" >
+			    <input type="hidden" name="_method" value="delete">
+			    <input type="submit" value="Delete" class="btn btn-link"/>
+			</form:form>	
+			<a href="/languages">Dashboard</a>
+		</div>
 	
-		<form:form action="/languages/new" method="post" modelAttribute="language" id="language-form"> 
+	
+		<form:form action="/languages/edit/${language.id}" method="post" modelAttribute="language" id="language-form"> 
+			<input type="hidden" name="_method" value="put">
 			<div id="errors">
 				<form:errors path="name" class="text-danger" />
 				<form:errors path="creator" class="text-danger" />
@@ -88,6 +57,5 @@
 			<input type="submit" value="Submit" />
 		</form:form>
 	</div>
-
 </body>
 </html>

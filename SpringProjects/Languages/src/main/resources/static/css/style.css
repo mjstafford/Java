@@ -19,3 +19,17 @@
 	width:fit-content;
 	
 }
+
+#actions{
+	display:flex;
+	align-items:center;
+}
+
+#errors{
+	display:flex;
+	flex-direction:column;
+}
+
+.page-container{
+	padding:2rem;
+}

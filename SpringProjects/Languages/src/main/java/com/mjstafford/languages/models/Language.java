@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -37,7 +38,7 @@ public class Language {
     @Size(min = 2, max = 200, message="Creator must be between 2 and 20 characters")
     private String creator;
 
-    @NotNull(message="Version cannot be blank")
+    @NotEmpty(message="Version cannot be blank")
     private String version;
     	
 	
