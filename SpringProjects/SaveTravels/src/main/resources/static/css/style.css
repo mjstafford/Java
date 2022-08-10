@@ -31,8 +31,46 @@ form>label{
 	font-weight: bold;
 }
 
-#errors{
+#errors, #show-body{
 	display:flex;
 	flex-direction: column;
 	background-color: black;
 }
+
+#actions, #show-body>div{
+	display:flex;
+	align-items:center;
+	gap: 1rem;
+	
+}
+
+#actions>form{
+	border:none;
+	padding:0;
+}
+
+
+#edit-header, #show-header{
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+}
+
+#show-body{
+	background-color: rgb(218 201 130);
+	padding:1rem;
+	width:fit-content;
+
+}
+
+#show-body>div>*{
+	font-size:2rem;
+}
+
+#show-body>div>p{
+	min-width:35rem;
+}
+
+
+
+

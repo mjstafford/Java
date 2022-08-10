@@ -26,7 +26,7 @@ public class ExpensesController {
 	@Autowired						
 	ExpenseService expenseService;
 	
-	
+	//ideally, should have use /expenses as base route to make this RESTful
 	@GetMapping("/")
 	public String index(@ModelAttribute("expense") Expense expense, Model model){	//modelAttribute here since there is a form on the page
 		//find all expenses and send to jsp
@@ -34,6 +34,13 @@ public class ExpensesController {
 		model.addAttribute("expenses", expenses);
 		
 		return "index.jsp";
+	}
+	
+	@GetMapping("/expenses/{id}")
+	public String show(@PathVariable("id") Long id, Model model) {
+		Expense expense = expenseService.getOne(id);
+		model.addAttribute("expense", expense);
+		return "show.jsp";
 	}
 	
 	@PostMapping("/new")

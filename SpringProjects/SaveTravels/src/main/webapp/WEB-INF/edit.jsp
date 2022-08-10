@@ -21,7 +21,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Edit Expense</h1>
+	<div id="edit-header">
+		<h1>Edit Expense</h1>
+		<a href="/">Go back</a>	
+	</div>
 	<form:form action="/expense/${expense.id}" method="post" modelAttribute="expense">
 	    <input type="hidden" name="_method" value="put">
 	    <p>
@@ -46,12 +49,6 @@
 	    </p>    
 	    <input type="submit" value="Submit"/>
 	</form:form>
-
-	<!--  delete option -->
-	<form:form action="/expense/${expense.id}" method="post">
-	    <input type="hidden" name="_method" value="delete">
-	    <input type="submit" value="Delete" />
-	</form:form>	
 	
 </body>
 </html>
