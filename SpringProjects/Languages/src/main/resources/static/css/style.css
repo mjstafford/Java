@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+#language-form{
+	display:flex;
+	flex-direction: column;
+	margin-top: 3rem;
+}
+
+#language-form>div{
+	display:flex;
+}
+
+#language-form>div>label{
+	display:flex;
+	min-width:5rem;
+}
+
+#language-form>input[type="submit"]{
+	width:fit-content;
+	
+}
