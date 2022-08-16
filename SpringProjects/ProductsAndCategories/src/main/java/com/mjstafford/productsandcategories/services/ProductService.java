@@ -19,10 +19,12 @@ public class ProductService {
 		return productRepo.save(product);
 	}
 
+	// finds all the products that contain the specified category in the categories member variable
 	public List<Product> findAllByCategories(Category category) {
 		return productRepo.findAllByCategories(category);
 	}
 
+	// finds all the products that do not contain the specified category in the categories member variable
 	public List<Product> findByCategoriesNotContains(Category category) {
 		return productRepo.findByCategoriesNotContains(category);
 	}

@@ -23,10 +23,12 @@ public class CategoryService {
 		return categoryRepo.findAll();
 	}
 	
+	//finds all the categories that contain the specific product in the products member variable
 	public List<Category> findAllByProducts(Product product){
 		return categoryRepo.findAllByProducts(product);
 	}
 	
+	// finds all the categories that do not contain the specified product in the products member variable
 	public List<Category> findByProductsNotContains(Product product){
 		return categoryRepo.findByProductsNotContains(product);
 	}
